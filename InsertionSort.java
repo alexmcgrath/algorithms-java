@@ -3,12 +3,16 @@ import static java.lang.System.*;
 public class InsertionSort{
     public static void main(String[] args){
         //Given an unsorted array
-        int[] intArray = {5,2,4,6,1,3};
+        int arraySize = Integer.parseInt(args[0]);
+        int[] intArray = Utils.generateRandomIntArray(arraySize);
+
+        out.println("Unsorted array:");
+        Utils.printIntArray(intArray);
+
         int[] result = insertionSort(intArray);
 
-        for(int i = 0; i < result.length; i++){
-            out.println(result[i]);
-        }
+        out.println("Sorted array:");
+        Utils.printIntArray(result);
     }
 
     private static int[] insertionSort(int[] intArray){

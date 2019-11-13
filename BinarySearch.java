@@ -3,18 +3,14 @@ import static java.lang.System.*;
 
 public class BinarySearch{
     public static void main(String[] args){
+        int arraySize = Integer.parseInt(args[0]);
         //Given a sorted array
-        int[] intArray = new int[]{1,2,3,4,5,6,7,8,9,10};
+        int[] intArray = Utils.generateSortedIntArray(arraySize);
 
-        //Test all elements can be found
-        for(int i = 0; i < intArray.length; i++) {
-            if (binarySearch(intArray[i], intArray)) out.println(intArray[i] + " Found");
-            else out.println(intArray[i] + "Not Found");
-        }
+        int valueToFind = Integer.parseInt(args[1]);
 
-        //Negative test
-        if (binarySearch(12, intArray)) out.println("12 Found");
-        else out.println("12 Not Found");
+        if (binarySearch(valueToFind, intArray)) out.println(valueToFind + " Found");
+        else out.println(valueToFind + " Not Found");
 
     }
 

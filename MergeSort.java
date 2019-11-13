@@ -3,14 +3,17 @@ import static java.lang.System.*;
 
 public class MergeSort{
     public static void main(String[] args){
-        //Given unsorted array
-        int[] intArray = new int[]{10,4,6,3,8,2,9,1,5,7};
+        //Given an unsorted array
+        int arraySize = Integer.parseInt(args[0]);
+        int[] intArray = Utils.generateRandomIntArray(arraySize);
+
+        out.println("Unsorted array:");
+        Utils.printIntArray(intArray);
 
         int[] result = mergeSort(intArray);
 
-        for(int i = 0; i < result.length; i++){
-            out.println(result[i]);
-        }
+        out.println("Sorted array:");
+        Utils.printIntArray(result);
     }
 
     private static int[] mergeSort(int[] intArray){
